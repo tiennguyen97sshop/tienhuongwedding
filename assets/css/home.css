@@ -26,6 +26,11 @@ body{
   overflow-y:auto;
   padding-bottom:120px;
   z-index:2;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+.content::-webkit-scrollbar{
+  display: none;
 }
 
 /* nền hoa lá bên trong */
