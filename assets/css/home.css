@@ -26,7 +26,7 @@ body{
 }
 
 /* nền hoa lá bên trong */
-body::after{
+/*body::after{
   content:"";
   position:fixed;
   inset:12px;
@@ -36,7 +36,7 @@ body::after{
   opacity:0.35;
   pointer-events:none;
   z-index:1;
-}
+}*/
 
 /* Mở Thiệp - Tiến Nguyễn */
 .intro-door{
