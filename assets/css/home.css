@@ -28,7 +28,7 @@ body{
   position:absolute;
   inset:0;
   overflow-y:auto;
-  padding-bottom:60px;
+  padding-bottom:30px;
   z-index:2;
   -ms-overflow-style: none; 
   scrollbar-width: none;
