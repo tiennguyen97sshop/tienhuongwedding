@@ -1,0 +1,76 @@
+{
+  "hero": {
+    "groom_name": "Nguyễn Tiến",
+    "bride_name": "Lê Hường",
+    "and_symbol": "&",
+    "wedding_date": "19.01.2027",
+    "subtitle": "We Are Getting Married"
+  },
+
+  "family": {
+    "groom": {
+      "name": "Nhà Trai",
+      "parents_label": "Ông Bà",
+      "father": "Nguyễn Văn Y",
+      "mother": "Vũ Thị X",
+      "address": "Số 85 Nguyễn Thái Sơn, P.4, Gò Vấp, TP.HCM"
+    },
+    "bride": {
+      "name": "Nhà Gái",
+      "parents_label": "Ông Bà",
+      "father": "Nguyễn Văn H",
+      "mother": "Vũ Thị X",
+      "address": "Ngõ 95 Láng Hạ, Đống Đa, Hà Nội"
+    }
+  },
+
+  "wedding_info": {
+
+    "groom_side": {
+      "title": "LỄ THÀNH HÔN",
+      "time_label": "Vào Lúc",
+
+      "time": {
+        "hour": "10 giờ 00",
+        "weekday": "Thứ 5",
+        "day": "15",
+        "month": "Tháng 2",
+        "year": "Năm 2025"
+      },
+
+      "lunar_date": "(Tức Ngày 18 Tháng 01 Năm Ất Tỵ)",
+
+      "place": {
+        "title": "BỮA CƠM THÂN MẬT TẠI",
+        "name": "Tư Gia Nhà Trai",
+        "address": "Xã Phú Xuyên, Thành Phố Hà Nội.",
+        "map_button": "Đường Tới Địa Điểm Tổ Chức",
+        "map_link": "https://maps.app.goo.gl/iasiFRNNwn1wJKiy7?g_st=ac"
+      }
+    },
+
+    "bride_side": {
+      "title": "LỄ VU QUY",
+      "time_label": "Vào Lúc",
+
+      "time": {
+        "hour": "09 giờ 00",
+        "weekday": "Thứ 5",
+        "day": "15",
+        "month": "Tháng 2",
+        "year": "Năm 2025"
+      },
+
+      "lunar_date": "(Tức Ngày 18 Tháng 01 Năm Ất Tỵ)",
+
+      "place": {
+        "title": "BỮA CƠM THÂN MẬT TẠI",
+        "name": "Tư Gia Nhà Gái",
+        "address": "Quận Đống Đa, Hà Nội",
+        "map_button": "Đường Tới Địa Điểm Tổ Chức",
+        "map_link": "#"
+      }
+    }
+
+  }
+}
