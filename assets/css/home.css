@@ -2,12 +2,35 @@
   box-sizing:border-box;
 }
 
-body{
+/*body{
   margin:0;
   background:#8c1c1c;
   color:#e8c88f;
   font-family:'Playfair Display', serif;
   position:relative;
+}*/
+
+body{
+  margin:0;
+  background:#8c1c1c;
+  color:#e8c88f;
+  font-family:'Playfair Display', serif;
+}
+
+/* khung thiệp */
+.viennen{
+  position:fixed;
+  inset:12px;
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:20px;
+  overflow:hidden; /* cắt nội dung */
+}
+
+/* nội dung scroll */
+.content{
+  height:100%;
+  overflow-y:auto;
+  padding:30px;
 }
 
 /* viền thiệp */
