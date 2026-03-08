@@ -996,6 +996,20 @@ padding:10px 18px; /* nhỏ gọn theo text */
   color:#bfa06c;
 }
 
+.thanks{
+  font-family: 'Great Vibes', cursive;
+  font-size:60px;
+  color:#f3d9a6;
+  line-height:1.1;
+  letter-spacing:2px;
+}
+
+.thanks-sub{
+  font-size:18px;
+  margin-top:10px;
+  letter-spacing:1px;
+}
+
 /* animation */
 @keyframes slideUp{
   from{ transform:translateY(100%); }
