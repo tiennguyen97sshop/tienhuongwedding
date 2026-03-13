@@ -27,28 +27,30 @@ const qs = (s) => document.querySelector(s);
 window.addEventListener("load",()=>{
   // hiện trang
   document.body.classList.add("ready");
-  // khóa scroll
-  document.documentElement.classList.add("no-scroll");
-  document.body.classList.add("no-scroll");
   // mở cửa
   setTimeout(()=>{
     document.querySelector(".intro-door").classList.add("open");
   },800);
-
   // sau khi mở xong
   setTimeout(()=>{
     document.querySelector(".intro-door").style.display="none";
-    /*document.documentElement.classList.remove("no-scroll");
-    document.body.classList.remove("no-scroll");
-    window.scrollTo(0,0);*/
+    startAutoScroll(); // ⭐ bắt đầu cuộn
   },2600);
 });
 
+// khóa scroll
+  /*document.documentElement.classList.add("no-scroll");
+  document.body.classList.add("no-scroll");*/
+  
+/*document.documentElement.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll");
+    window.scrollTo(0,0);*/
+    
 /* ===============================
    LOAD ẢNH TỰ ĐỘNG + RANDOM
 ================================ */
 
-const folder = "assets/images/anhtoi/";
+const folder = "assets/images/anhcuoi/";
 let images = [];
 
 /* containers */
@@ -530,7 +532,7 @@ function renderMusicPlayer(name){
   initMusic(); // 🔥 gọi sau khi HTML tồn tại
 }
 
-let music; // global
+//let music; // global
 
 function initMusic(){
   music = new Audio("assets/audio/mylove.mp3");
@@ -547,33 +549,71 @@ function initMusic(){
       musicInfo.classList.remove("active");
     },4000);
   }
-  musicBtn.addEventListener("click", ()=>{
-    if(!isPlaying){
-      music.play();
-      musicIcon.style.display = "none";
-      musicBars.style.display = "flex";
-      showMusicInfo();
-    }else{
-      music.pause();
-      musicIcon.style.display = "block";
-      musicBars.style.display = "none";
-    }
-    isPlaying = !isPlaying;
-  });
+  musicBtn.addEventListener("click", (e)=>{
+
+  e.stopPropagation(); // ⭐ thêm dòng này
+
+  if(!isPlaying){
+    music.play();
+    musicIcon.style.display = "none";
+    musicBars.style.display = "flex";
+    musicStarted = true;
+    showMusicInfo();
+  }else{
+    music.pause();
+    musicIcon.style.display = "block";
+    musicBars.style.display = "none";
+  }
+
+  isPlaying = !isPlaying;
+
+});
 }
 
 renderMusicPlayer("Nguyễn Tiến & Lê Hường");
 
-document.addEventListener("click", function startMusic(){
+// ====== NGHE NHẠC CÙNG MÌNH NHÉ ======
 
-  if(music){
-    music.play().catch(()=>{});
+let musicStarted = false;
 
-    document.getElementById("musicIcon").style.display = "none";
-    document.getElementById("musicBars").style.display = "flex";
-  }
+/* tạo popup */
 
-  document.removeEventListener("click", startMusic);
+const popup = document.createElement("div");
+popup.id = "musicPopup";
+
+popup.innerHTML = `
+<div class="music-box">
+<div class="icon">🎵</div>
+<h3>Cùng nghe nhạc nhé!</h3>
+<p>Chạm để bắt đầu nghe nhạc</p>
+</div>
+`;
+
+popup.style.display="none";
+
+document.body.appendChild(popup);
+
+/* sau 8s */
+
+setTimeout(()=>{
+
+if(!musicStarted){
+popup.style.display="flex";
+}
+
+},8000);
+
+/* bấm popup */
+
+popup.addEventListener("click", ()=>{
+
+const btn = document.getElementById("musicBtn"); // lấy lại nút
+
+if(btn){
+btn.click(); // giả lập bấm nút nhạc
+}
+
+popup.style.display="none";
 
 });
 
@@ -797,34 +837,26 @@ submitBtn?.addEventListener("click", () => {
 
 /* Hoa Rơi */
 const petalsContainer = document.querySelector(".petals");
-
 function createPetal(){
   const petal = document.createElement("div");
   petal.classList.add("petal");
-
   const size = Math.random() * 10 + 10;
   petal.style.width = size + "px";
   petal.style.height = size + "px";
-
   petal.style.left = Math.random() * 100 + "vw";
   petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
   petal.style.opacity = Math.random();
-
   petalsContainer.appendChild(petal);
-
   setTimeout(()=> petal.remove(), 10000);
 }
 setInterval(createPetal, 500);
 
 /* Hiệu Ứng */
 document.addEventListener("DOMContentLoaded", function(){
-
   const sections = document.querySelectorAll("section");
-
   sections.forEach(section=>{
     section.classList.add("reveal");
   });
-
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
@@ -843,8 +875,6 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
 });
-
-/* Nâng Cấp Nhẹ */
 
 /* Mừng Cưới */
 const giftHTML = `
@@ -944,8 +974,210 @@ for(let d=1; d<=totalDays; d++){
 
 }
 
-renderCalendar(2026, 3, [5, 15, 22]);
+renderCalendar(2026, 4, [10,11]);
 
 /* Nâng Cấp */
+
+/* Đồng Hồ */
+function startCountdown(){
+  const weddingDate = new Date("2026-04-11T00:00:00");
+  const timeEl = document.getElementById("countdown-time");
+  const cnEl = document.getElementById("countdown-cn");
+  function update(){
+    const now = new Date();
+    const diff = weddingDate - now;
+    if(diff <= 0){
+      timeEl.textContent = "Hẹn Gặp Bạn Trong Ngày Đặc Biệt Của Chúng Tôi ❤️";
+      //cnEl.textContent = "婚禮開始 ❤️";
+      return;
+    }
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff/(1000*60*60)) % 24);
+    const minutes = Math.floor((diff/(1000*60)) % 60);
+    const seconds = Math.floor((diff/1000) % 60);
+    timeEl.textContent =
+      `${days} ngày ${hours} giờ ${minutes} phút`;
+      
+    /*timeEl.textContent =
+      `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;*/
+    /*cnEl.textContent =
+      `${days} 天 ${hours} 時 ${minutes} 分 ${seconds} 秒`;*/
+  }
+  update();
+  setInterval(update,1000);
+}
+startCountdown();
+
+/* Video */
+const videoLink = "https://www.youtube.com/watch?v=uQzGdzzDtLA";
+// hoặc
+// const videoLink = "videos/wedding.mp4";
+const videoBox = document.getElementById("videoItem");
+if(videoLink.includes("youtube") || videoLink.includes("youtu.be")){
+  const id = videoLink.split("v=")[1]?.split("&")[0] || videoLink.split("/").pop();
+  videoBox.innerHTML = `
+  <iframe
+  src="https://www.youtube.com/embed/${id}"
+  frameborder="0"
+  allowfullscreen>
+  </iframe>
+  `;
+}else if(videoLink.endsWith(".mp4")){
+  videoBox.innerHTML = `
+  <video controls>
+    <source src="${videoLink}" type="video/mp4">
+  </video>
+  `;
+}
+
+/* ===============================
+   AUTO SCROLL
+================================ */
+let scrollBox;
+let autoScrolling = true;
+let autoScrollTimer;
+
+function startAutoScroll(){
+  scrollBox = document.querySelector(".content");
+  if(!scrollBox) return;
+  autoScrollTimer = setInterval(()=>{
+    if(!autoScrolling) return;
+    scrollBox.scrollBy({
+      top:1
+    });
+  },20);
+}
+
+/* user interaction */
+function stopAutoScroll(){
+  autoScrolling = false;
+  clearTimeout(window.resumeScroll);
+  window.resumeScroll = setTimeout(()=>{
+    autoScrolling = true;
+  },5000);
+}
+
+/* detect interaction */
+["wheel","touchstart","mousedown","keydown"].forEach(event=>{
+  window.addEventListener(event,stopAutoScroll,{passive:true});
+});
+
+/* Lịch Trình */
+fetch("assets/data/event.json")
+.then(res=>res.json())
+.then(data=>{
+
+const tabBox = document.getElementById("tabs");
+const contentBox = document.getElementById("tabContents");
+
+data.tabs.forEach((tab,i)=>{
+
+/* tạo nút tab */
+
+const btn = document.createElement("button");
+btn.className="tab-btn";
+btn.textContent=tab.name;
+btn.dataset.tab=i;
+
+if(i===0) btn.classList.add("active");
+
+tabBox.appendChild(btn);
+
+/* tạo nội dung */
+
+const div=document.createElement("div");
+div.className="tab-content";
+div.dataset.date=tab.date;
+
+if(i===0) div.classList.add("active");
+
+tab.events.forEach(ev=>{
+
+div.innerHTML+=`
+<div class="timeline-item">
+<span class="time">${ev.time}</span>
+<span class="event">${ev.title}</span>
+</div>
+`;
+
+});
+
+contentBox.appendChild(div);
+
+});
+
+/* tab switch */
+
+document.querySelectorAll(".tab-btn").forEach(btn=>{
+btn.onclick=()=>{
+
+document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+document.querySelectorAll(".tab-content").forEach(c=>c.classList.remove("active"));
+
+btn.classList.add("active");
+document.querySelectorAll(".tab-content")[btn.dataset.tab].classList.add("active");
+
+};
+});
+
+checkTimeline();
+setInterval(checkTimeline,60000);
+
+});
+
+
+function checkTimeline(){
+
+const tabs=document.querySelectorAll(".tab-content");
+
+tabs.forEach(tab=>{
+
+const items=tab.querySelectorAll(".timeline-item");
+const date=tab.dataset.date;
+
+const now=new Date();
+
+let doneCount=0;
+
+items.forEach(item=>{
+
+const time=item.querySelector(".time").textContent;
+
+const [h,m]=time.split(":");
+
+const eventTime=new Date(date);
+
+eventTime.setHours(h);
+eventTime.setMinutes(m);
+
+if(now>=eventTime){
+
+const event=item.querySelector(".event");
+
+if(!event.innerHTML.includes("✓")){
+event.innerHTML+=" ✓";
+}
+
+doneCount++;
+
+}
+
+});
+
+/* nếu hết timeline */
+if(doneCount===items.length){
+if(!tab.querySelector(".timeline-finish")){
+const finish=document.createElement("div");
+finish.className="timeline-item timeline-finish";
+const d = new Date(date);
+const day = String(d.getDate()).padStart(2,"0");
+const month = String(d.getMonth()+1).padStart(2,"0");
+finish.textContent=`${day}/${month} Sự Kiện Diễn Ra Thành Công Tốt Đẹp`;
+tab.appendChild(finish);
+}
+}
+
+});
+}
 
 console.log("JS ĐÃ CHẠY");
