@@ -115,8 +115,8 @@ function loadSchedule(type){
   buoile.forEach(el=>{
     el.textContent =
       type === "bride_side"
-      ? "LỄ VU QUY CỦA"
-      : "LỄ THÀNH HÔN CỦA";
+      ? "TRÂN TRỌNG BÁO TIN LỄ VU QUY CỦA"
+      : "TRÂN TRỌNG BÁO TIN LỄ THÀNH HÔN CỦA";
   });
   
   if(title) title.innerText = s.title;
