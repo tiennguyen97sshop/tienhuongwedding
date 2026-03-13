@@ -12,15 +12,15 @@ content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 <meta property="og:type" content="website">
 <meta property="og:title" content="Thiệp Cưới Nguyễn Tiến & Lê Hường">
 <meta property="og:description" content="Trân trọng kính mời bạn đến tham dự lễ cưới của chúng tôi">
-<meta property="og:image" content="assets/images/anhtoi/a1.jpg">
-<meta property="og:url" content="https://tienhuonglove.vercel.app">
-<meta property="og:site_name" content="tienhuonglove.vercel.app">
+<meta property="og:image" content="assets/images/anhcuoi/a1.jpg">
+<meta property="og:url" content="#">
+<meta property="og:site_name" content="#">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Thiệp Cưới Nguyễn Tiến & Lê Hường">
 <meta name="twitter:description" content="Trân trọng kính mời bạn đến tham dự lễ cưới của chúng tôi">
-<meta property="twitter:image" content="assets/images/anhtoi/a1.jpg">
+<meta property="twitter:image" content="assets/images/anhcuoi/a1.jpg">
 <link rel="stylesheet" href="assets/css/home.css">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -43,19 +43,27 @@ content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
   </div>
   <!-- Content -->
   <div class="hero-content">
-    <h1 class="names"></h1>
-    <div class="and"></div>
-    <h1 class="names"></h1>
-    <div class="hero-date">
-  <div class="wedding-date"></div>
-  <div class="wedding-sub"></div>
-</div>
+  <div class="person">
+    <div class="role groom-role">Trưởng Nam</div>
+    <h1 class="names groom-name"></h1>
+  </div>
+  <div class="and"></div>
+  <div class="person">
+    <div class="role bride-role">Út Nữ</div>
+    <h1 class="names bride-name"></h1>
+  </div>  
+  <div class="hero-date">
+    <div class="wedding-date"></div>
+    <div class="wedding-sub"></div>
+    <div id="countdown-time" class="countdown-time"></div>
+  </div>
   </div>
 </section>
 
 <div class="photo-section">
 <div class="red-frame">
-  <img src="assets/images/anhtoi/a1.jpg" alt="Ảnh cưới">
+  <img class="anhchinh" src="assets/images/anhcuoi/a1.jpg" alt="Ảnh cưới">
+  <img class="lantern" src="assets/images/denlong.webp">
 </div>
 <p class="photo-text">Hôn nhân là chuyện cả đời,<br>
 Yêu người vừa ý, cưới người mình thương...</p>
@@ -91,7 +99,7 @@ Yêu người vừa ý, cưới người mình thương...</p>
   </div>
 </div>
 <div class="announcement">
-  <p class="bold">TRÂN TRỌNG BÁO TIN</p>
+  <!--p class="bold">TRÂN TRỌNG BÁO TIN</p-->
   <p class="buoile"></p>
   <h2 class="invite-title">Nguyễn Tiến & Lê Hường</h2>
 </div>
@@ -117,41 +125,41 @@ Yêu người vừa ý, cưới người mình thương...</p>
   <h2 class="invite-title-wedding"></h2>
   <div class="invite-time">Vào Lúc</div>
   <div class="time-grid">
-    <div class="time-left">
-      <div class="time-hour">10 giờ 00</div>
-    </div>
+    <div class="time-left"><div class="time-hour"></div></div>
     <div class="time-center">
-      <div class="time-week">Thứ 5</div>
-      <div class="time-day">15</div>
-      <div class="time-month">Tháng 2</div>
+      <div class="time-week"></div>
+      <div class="time-day"></div>
+      <div class="time-month"></div>
     </div>
-    <div class="time-right">
-      <div class="time-year">Năm 2025</div>
-    </div>
+    <div class="time-right"><div class="time-year"></div></div>
   </div>
-  <div class="lunar-date">
-    (Tức Ngày 18 Tháng 01 Năm Ất Tỵ)
-  </div>
-  <div class="place-title">
-    BUỔI TIỆC ĐƯỢC TỔ CHỨC TẠI
-  </div>
+  <div class="lunar-date"></div>
+  <div class="place-title">Điểm Tổ Chức Hôn Lễ</div>
   <div class="location-box">
-    <div class="location-name">
-      Nguyên Hanh
-    </div>
-    <div class="location-address">
-      Xã Phú Xuyên, Thành Phố Hà Nội.
-    </div>
-    <a href="#" class="map-btn">Đường Tới Địa Điểm Tổ Chức</a>
+    <div class="location-name"></div>
+    <div class="location-address"></div>
+    <a href="#" class="map-btn"></a>
   </div>
-  <h3 class="calendar-title" id="calendar-title">THÁNG 03 - 2024</h3>
+  <h3 class="calendar-title" id="calendar-title"></h3>
   <div class="calendar" id="calendar"></div>
 </section>
 
+<section class="schedule">
+<h2 class="schedule-title">Lịch Trình Hôn Lễ</h2>
+<div id="tabs"></div>
+<div id="tabContents"></div>
+</section>
+<!-- Đếm Ngược -->
+<!--section class="countdown">
+  <h3>Cùng Đếm Ngược</h3>
+  <div id="countdown-time" class="countdown-time"></div>
+</section-->
 <!-- ALBUM -->
 <section class="section">
-  <h2 class="section-title">ALBUM ẢNH CƯỚI</h2>
+  <h2 class="section-title">ALBUM VIDEO / ẢNH CƯỚI</h2>
   <div class="gallery" id="gallery"></div>
+  <!-- VIDEO -->
+  <div class="video-item" id="videoItem"></div>
 </section>
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
