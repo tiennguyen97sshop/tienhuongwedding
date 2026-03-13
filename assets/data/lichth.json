@@ -3,74 +3,63 @@
     "groom_name": "Nguyễn Tiến",
     "bride_name": "Lê Hường",
     "and_symbol": "&",
-    "wedding_date": "19.01.2027",
+    "wedding_date": "11.04.2026",
     "subtitle": "We Are Getting Married"
   },
-
   "family": {
     "groom": {
       "name": "Nhà Trai",
       "parents_label": "Ông Bà",
-      "father": "Nguyễn Văn Y",
-      "mother": "Vũ Thị X",
-      "address": "Số 85 Nguyễn Thái Sơn, P.4, Gò Vấp, TP.HCM"
+      "father": "Nguyễn Văn Tuồng",
+      "mother": "Vũ Thị Thúy",
+      "address": "Nhà Số 7, Xóm Trung Dưới, Nguyên Hanh, Xã Phú Xuyên, TP.Hà Nội"
     },
     "bride": {
       "name": "Nhà Gái",
       "parents_label": "Ông Bà",
-      "father": "Nguyễn Văn H",
-      "mother": "Vũ Thị X",
-      "address": "Ngõ 95 Láng Hạ, Đống Đa, Hà Nội"
+      "father": "Lê Bá Hải",
+      "mother": "Lương Thị Tuyên",
+      "address": "Xã Khoái Châu, Thôn Thông Quan Hạ, Ngõ 139,  Nghách 21, Nhà Số 7, TP. Hưng Yên"
     }
   },
-
   "wedding_info": {
-
     "groom_side": {
-      "title": "LỄ THÀNH HÔN",
+      "title": "LỄ THÀNH HÔN ĐƯỢC CỬ HÀNH TẠI TƯ GIA",
       "time_label": "Vào Lúc",
-
       "time": {
-        "hour": "10 giờ 00",
-        "weekday": "Thứ 5",
-        "day": "15",
-        "month": "Tháng 2",
-        "year": "Năm 2025"
+        "hour": "00 giờ 00",
+        "weekday": "Thứ 7",
+        "day": "11",
+        "month": "Tháng 4",
+        "year": "Năm 2026"
       },
-
-      "lunar_date": "(Tức Ngày 18 Tháng 01 Năm Ất Tỵ)",
-
+      "lunar_date": "(Tức Ngày 24 Tháng 02 Năm Bính Ngọ)",
       "place": {
         "title": "BỮA CƠM THÂN MẬT TẠI",
-        "name": "Tư Gia Nhà Trai",
-        "address": "Xã Phú Xuyên, Thành Phố Hà Nội.",
+        "name": "Nhà Số 7, Xóm Trung Dưới",
+        "address": "Nguyên Hanh, Xã Phú Xuyên, TP.Hà Nội.",
         "map_button": "Đường Tới Địa Điểm Tổ Chức",
         "map_link": "https://maps.app.goo.gl/iasiFRNNwn1wJKiy7?g_st=ac"
       }
     },
-
     "bride_side": {
-      "title": "LỄ VU QUY",
+      "title": "LỄ VU QUY ĐƯỢC CỬ HÀNH TẠI TƯ GIA",
       "time_label": "Vào Lúc",
-
       "time": {
-        "hour": "09 giờ 00",
-        "weekday": "Thứ 5",
-        "day": "15",
-        "month": "Tháng 2",
-        "year": "Năm 2025"
+        "hour": "00 giờ 00",
+        "weekday": "Thứ 7",
+        "day": "11",
+        "month": "Tháng 4",
+        "year": "Năm 2026"
       },
-
-      "lunar_date": "(Tức Ngày 18 Tháng 01 Năm Ất Tỵ)",
-
+      "lunar_date": "(Tức Ngày 24 Tháng 02 Năm Bính Ngọ)",
       "place": {
         "title": "BỮA CƠM THÂN MẬT TẠI",
-        "name": "Tư Gia Nhà Gái",
-        "address": "Quận Đống Đa, Hà Nội",
+        "name": "Xã Khoái Châu, Thôn Thông Quan Hạ, Ngõ 139,  Nghách 21, Nhà Số 7",
+        "address": "TP. Hưng Yên",
         "map_button": "Đường Tới Địa Điểm Tổ Chức",
-        "map_link": "#"
+        "map_link": "https://goo.gl/maps/P58LrPdxjapQHAVt8?g_st=ac"
       }
     }
-
   }
 }
